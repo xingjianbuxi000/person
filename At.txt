@@ -1,3 +1,5 @@
+#看理想 开屏广告
+^https:\/\/api\.vistopia\.com\.cn\/api\/v2\/home\/advertisement url reject-dict
 #中信银行
 ^https:\/\/imcs\.citicbank\.com\/cloud\/.+(1125.+2436|1242.+2688|750.+1638|563.+1218) url reject-dict
 #农业银行
