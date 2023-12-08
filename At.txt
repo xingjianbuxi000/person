@@ -4,6 +4,8 @@
 ^https?:\/\/enjoy\.cdn-static\.abchina\.com\/yx-engine-web\/file\/download\/(9ce31|1bf6e) url reject-200
 ^https?:\/\/enjoy\.cdn-static\.abchina\.com\/yx-engine-web\/file\/download\/6bd18.*? url reject-200
 ^https:\/\/midc\.cdn-static\.abchina\.com\.cn\/distributecenterimg\/file\/download\/bdfb4 url reject-dict
+# > 农业银行 #开屏广告
+^https:\/\/midc\.cdn-static\.abchina\.com\.cn\/distributecenterimg\/file\/download\/(bdfb4|86fb9|7aa68) url reject-dict
 #建行生活 #弹窗广告
 ^https:\/\/yunbusiness\.ccb\.com\/clp_service\/txCtrl\?txcode=A3341A120 url reject-dict
 #向日葵 #首页横幅广告
