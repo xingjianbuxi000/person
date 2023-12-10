@@ -1,17 +1,12 @@
-#!name = Bilibili共享会员
-#!desc = 需要启用MitM-over-HTTP/2功能，请严格填写数据，支持iPad端。使用时需启用此插件，禁用则共享会员失效，点击下方链接查看使用说明。
-#!openUrl = https://gitlab.com/isous/loonresource/-/blob/main/Document/Bilibili/README.md
-#!author = 伟人
-#!homepage = https://gitlab.com/isous/loonresource/-/tree/main/Plugin
-#!icon = https://gitlab.com/isous/loonresource/-/raw/main/Icon/Bilibili.png
-#!date = 2023-12-10 00:40:28
-#!input = Bilibili_Authorization
-#!input = Bilibili_User-Agent
-
-[Script]
-http-request ^https?:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.playerunite\.v1\.Player\/PlayViewUnite(\?.+)?$ script-path = https://gitlab.com/isous/loonresource/-/raw/main/Script/Bilibili/Bilibili_shared_membership.js, tag = iPhone端共享会员
-# http-request ^https?:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.player(unite\.v1\.Player\/PlayViewUnite|online\.v1\.PlayerOnline\/PlayerOnline) script-path = https://gitlab.com/isous/loonresource/-/raw/main/Script/Bilibili/Bilibili_shared_membership.js, tag = iPhone端共享会员
-http-request ^https?:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.pgc\.gateway\.player\.v2\.PlayURL\/PlayView$ script-path = https://gitlab.com/isous/loonresource/-/raw/main/Script/Bilibili/Bilibili_shared_membership.js, tag = iPad端共享会员
-  
-[Mitm]
-hostname = grpc.biliapi.net, app.bilibili.com
+/*
+脚本作者：佚名
+脚本日期：2023-11-18 19:15:01
+引用地址：
+*/
+var headers = $request['headers'];
+delete headers["Authorization"];
+delete headers["User-Agent"];
+// headers['buvid'] = $persistentStore.read("Bilibili_buvid");
+headers['authorization'] = $persistentStore.read("identify_v1 c4a5f7ab74964a107ce7a62160e31372lq8_TxlJ195kjOznVayhf2FhYwW1pxNzhFuNdSGcrMAgspM_H2VOxE3IckcSKP3FphmWTwAAQAA");
+headers['user-agent'] = $persistentStore.read("bili-inter/70802100 os/ios model/iPhone 13 mobi_app/iphone_i osVer/16.1.2 network/2");
+$done({ 'headers': headers });
