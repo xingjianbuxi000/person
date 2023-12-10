@@ -7,6 +7,6 @@ var headers = $request['headers'];
 delete headers["Authorization"];
 delete headers["User-Agent"];
 // headers['buvid'] = $persistentStore.read("Bilibili_buvid");
-headers['authorization'] = $persistentStore.read("identify_v1 c4a5f7ab74964a107ce7a62160e31372lq8_TxlJ195kjOznVayhf2FhYwW1pxNzhFuNdSGcrMAgspM_H2VOxE3IckcSKP3FphmWTwAAQAA");
-headers['user-agent'] = $persistentStore.read("bili-inter/70802100 os/ios model/iPhone 13 mobi_app/iphone_i osVer/16.1.2 network/2");
+headers['authorization'] = 'identify_v1 c4a5f7ab74964a107ce7a62160e31372lq8_TxlJ195kjOznVayhf2FhYwW1pxNzhFuNdSGcrMAgspM_H2VOxE3IckcSKP3FphmWTwAAQAA';
+headers['user-agent'] = 'bili-inter/70802100 os/ios model/iPhone 13 mobi_app/iphone_i osVer/16.1.2 network/2';
 $done({ 'headers': headers });
